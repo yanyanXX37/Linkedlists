@@ -36,9 +36,11 @@ public class METHODS {
 
     void showlist(){
         Node temp = head;
+        int count = 1;
         while (temp != null){
-            System.out.println(temp.age + " " + temp.name + " " + temp.school + " " + temp.id);
+            System.out.println(count+"-\t["+temp.name + "] - [" + temp.age + "] -  [" + temp.school + "] - [" + temp.id+"]");
             temp = temp.next;
+            count++;
         }
     }
 
@@ -52,15 +54,17 @@ public class METHODS {
             return;
         }
 
+        sc.nextLine();
+
         System.out.println("Enter name of student: ");
-        String name = sc.next();
+        String name = sc.nextLine();
         if (name.matches(".*[0-9].*")) {
             System.out.println("\t\nName cannot contain numbers.\t");
             return;
         }
 
         System.out.println("Enter school of student: ");
-        String school = sc.next();
+        String school = sc.nextLine();
         if (school.matches(".*[0-9].*")) {
             System.out.println("\t\nSchool name cannot contain numbers.\t");
             return;
@@ -134,11 +138,13 @@ public class METHODS {
 
     void showlistReverse(){
         Node temp = head;
+        int count = 1;
         while (temp.next != null){
             temp = temp.next;
         }
-        while (temp.prev != null){
-            System.out.println(temp.age + " " + temp.name + " " + temp.school + " " + temp.id);
+        while (temp != null){
+            System.out.println(count+"-\t["+temp.name + "] - [" + temp.age + "] -  [" + temp.school + "] - [" + temp.id+"]");
+            count++;
             temp = temp.prev;
         }
     }
