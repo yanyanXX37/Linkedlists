@@ -134,26 +134,27 @@ public class METHODS {
 
 
         while(true){
-            System.out.println("=========================");
-            System.out.println("\n-CLASSROOM MANAGER-");
-            System.out.println("=========================");
-            System.out.println("\n1. [ADD STUDENT AT THE BEGINNING]");
-            System.out.println("\n2. [ADD STUDENT AT THE END]");
-            System.out.println("\n3. [DISPLAY LIST OF STUDENTS]");
-            System.out.println("\n4. [DISPLAY LIST OF STUDENTS IN REVERSE]");
-            System.out.println("\n5. [ACTUALLY REVERSE THE LIST OF STUDENTS]");
-            System.out.println("\n6. [SEARCH STUDENT]");
-            System.out.println("\n7. [DELETE FIRST STUDENT]");
-            System.out.println("\n8. [DELETE LAST STUDENT]");
-            System.out.println("\n9. [COUNT NUMBER OF STUDENTS]");
+            System.out.println("===============================");
+            System.out.println("\t-CLASSROOM MANAGER-");
+            System.out.println("===============================");
+            System.out.println("\n1.\t [ADD STUDENT AT THE BEGINNING]");
+            System.out.println("2.\t [ADD STUDENT AT THE END]");
+            System.out.println("3.\t [DISPLAY LIST OF STUDENTS]");
+            System.out.println("4.\t [DISPLAY LIST OF STUDENTS IN REVERSE]");
+            System.out.println("5.\t [ACTUALLY REVERSE THE LIST OF STUDENTS]");
+            System.out.println("6.\t [SEARCH STUDENT]");
+            System.out.println("7.\t [DELETE FIRST STUDENT]");
+            System.out.println("8.\t [DELETE LAST STUDENT]");
+            System.out.println("9.\t [COUNT NUMBER OF STUDENTS]");
+            System.out.println("10.\t [EXIT]");
 
             int choice = sc.nextInt();
 
             switch(choice){
-                case 1: addfirstMenu(); break;
+                case 1: addfirstMenu();break;
                 case 2:addLastMenu(); break;
                 case 3: showlist(); break;
-                
+                case 4:
             }
         }
 
@@ -167,6 +168,7 @@ public class METHODS {
 public void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     METHODS m = new METHODS();
+    m.MENU();
 
 
 }
