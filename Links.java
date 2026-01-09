@@ -42,6 +42,78 @@ public class METHODS {
         }
     }
 
+    void addLastMenu(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter age of student: ");
+        int age = sc.nextInt();
+        if (age < 18){
+            System.out.println("\t\nAge must be greater than 18 to be admitted.\t");
+            return;
+        }
+
+        System.out.println("Enter name of student: ");
+        String name = sc.next();
+        if (name.matches(".*[0-9].*")) {
+            System.out.println("\t\nName cannot contain numbers.\t");
+            return;
+        }
+
+        System.out.println("Enter school of student: ");
+        String school = sc.next();
+        if (school.matches(".*[0-9].*")) {
+            System.out.println("\t\nSchool name cannot contain numbers.\t");
+            return;
+        }
+
+        System.out.println("Enter id of student: ");
+        String idString = sc.next();
+        if (!idString.matches(".*[0-9].*")) {
+            System.out.println("\t\nID cannot contain letters.\t");
+            return;
+        }
+        int id = Integer.parseInt(idString);
+
+
+        System.out.println("Student added successfully to the end of the list.\n\n");
+        addLast(age, name, school, id);
+    }
+
+    void addfirstMenu(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter age of student: ");
+        int age = sc.nextInt();
+        if (age < 18){
+            System.out.println("\t\nAge must be greater than 18 to be admitted.\t");
+            return;
+        }
+
+        System.out.println("Enter name of student: ");
+        String name = sc.next();
+        if (name.matches(".*[0-9].*")) {
+            System.out.println("\t\nName cannot contain numbers.\t");
+            return;
+        }
+
+        System.out.println("Enter school of student: ");
+        String school = sc.next();
+        if (school.matches(".*[0-9].*")) {
+            System.out.println("\t\nSchool name cannot contain numbers.\t");
+            return;
+        }
+
+        System.out.println("Enter id of student: ");
+        String idString = sc.next();
+        if (!idString.matches(".*[0-9].*")) {
+            System.out.println("\t\nID cannot contain letters.\t");
+            return;
+        }
+        int id = Integer.parseInt(idString);
+
+        System.out.println("Student added successfully to the beginning of the list.\n\n");
+        addFirst(age, name, school, id);
+    }
     void addFirst(int age, String name, String school, int id){
         Node data = new Node(age, name, school, id);
 
@@ -57,26 +129,45 @@ public class METHODS {
         return;
     }
 
+    void MENU(){
+        Scanner sc = new Scanner(System.in);
+
+
+        while(true){
+            System.out.println("=========================");
+            System.out.println("\n-CLASSROOM MANAGER-");
+            System.out.println("=========================");
+            System.out.println("\n1. [ADD STUDENT AT THE BEGINNING]");
+            System.out.println("\n2. [ADD STUDENT AT THE END]");
+            System.out.println("\n3. [DISPLAY LIST OF STUDENTS]");
+            System.out.println("\n4. [DISPLAY LIST OF STUDENTS IN REVERSE]");
+            System.out.println("\n5. [ACTUALLY REVERSE THE LIST OF STUDENTS]");
+            System.out.println("\n6. [SEARCH STUDENT]");
+            System.out.println("\n7. [DELETE FIRST STUDENT]");
+            System.out.println("\n8. [DELETE LAST STUDENT]");
+            System.out.println("\n9. [COUNT NUMBER OF STUDENTS]");
+
+            int choice = sc.nextInt();
+
+            switch(choice){
+                case 1: addfirstMenu(); break;
+                case 2:addLastMenu(); break;
+                case 3: showlist(); break;
+                
+            }
+        }
+
+
+
+
+    }
+
 }
 
 public void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     METHODS m = new METHODS();
-    METHODS m1 = new METHODS();
 
-    m.addLast(20, "Aman", "SIT", 123);
-    m.addLast(21, "Rahul", "SIT", 124);
-    m.addLast(22, "Ravi", "SIT", 125);
-
-    m.showlist();
-    System.out.println();
-    System.out.println();
-
-    m1.addFirst(20, "Aman", "SIT", 123);
-    m1.addFirst(21, "Rahul", "SIT", 124);
-    m1.addFirst(22, "Ravi", "SIT", 125);
-
-    m1.showlist();
 
 }
 
