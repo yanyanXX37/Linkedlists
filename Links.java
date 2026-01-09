@@ -88,16 +88,19 @@ public class METHODS {
             System.out.println("\t\nAge must be greater than 18 to be admitted.\t");
             return;
         }
+        sc.nextLine();
+
 
         System.out.println("Enter name of student: ");
-        String name = sc.next();
+        String name = sc.nextLine();
         if (name.matches(".*[0-9].*")) {
             System.out.println("\t\nName cannot contain numbers.\t");
             return;
         }
 
+
         System.out.println("Enter school of student: ");
-        String school = sc.next();
+        String school = sc.nextLine();
         if (school.matches(".*[0-9].*")) {
             System.out.println("\t\nSchool name cannot contain numbers.\t");
             return;
@@ -129,6 +132,17 @@ public class METHODS {
         return;
     }
 
+    void showlistReverse(){
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        while (temp.prev != null){
+            System.out.println(temp.age + " " + temp.name + " " + temp.school + " " + temp.id);
+            temp = temp.prev;
+        }
+    }
+
     void MENU(){
         Scanner sc = new Scanner(System.in);
 
@@ -154,7 +168,8 @@ public class METHODS {
                 case 1: addfirstMenu();break;
                 case 2:addLastMenu(); break;
                 case 3: showlist(); break;
-                case 4:
+                case 4: showlistReverse(); break;
+
             }
         }
 
